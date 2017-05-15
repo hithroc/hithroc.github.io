@@ -6,7 +6,7 @@
         var hook    = document.getElementById("hook").value;
         var payload = document.getElementById("payload").value;
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() { alert(this.response); }
+        xhttp.onreadystatechange = function() { if (this.readyState == 4) { alert(this.response); } }
         xhttp.open("GET", hook + "?text=" + encodeURIComponent(payload), true);
         xhttp.send();
       }
