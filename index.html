@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      var sendWebhook = function() {
+        var hook    = document.getElementById("hook").value;
+        var payload = document.getElementById("payload").value;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() { alert(this.response); }
+        xhttp.open("GET", hook + "?text=" + encodeURIComponent(payload), true);
+        xhttp.send();
+      }
+    </script>
+  </head>
+  <body>
+    <input id="hook" class="url-input" type="text" placeholder="Webhook">
+    <input id="payload" class="url-input" type="text" placeholder="Payload">
+    <input id="submit_button" class="submit" type="submit" onclick="sendWebhook()"  value="Submit">
+  </body>
+</html>
