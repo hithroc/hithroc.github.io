@@ -1,33 +1,8 @@
 <!doctype html>
 <html>
-  <head>
-    <script>
-      function findGetParameter(parameterName) {
-        var result = null,
-            tmp = [];
-        location.search
-        .substr(1)
-            .split("&")
-            .forEach(function (item) {
-            tmp = item.split("=");
-            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-        });
-        return result;
-      }
-      function sendWebhook() {
-        var hook    = document.getElementById("hook").value;
-        var payload = document.getElementById("payload").value;
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() { if (this.readyState == 4) { alert(this.response); } }
-        xhttp.open("GET", hook + "?text=" + encodeURIComponent(payload), true);
-        xhttp.send();
-      };
-      window.onload = function () {document.getElementById("hook").value = atob(findGetParameter("hook"))};
-    </script>
-  </head>
+  <head></head>
   <body>
-    <input id="hook" class="url-input" type="text" placeholder="Webhook">
-    <input id="payload" class="url-input" type="text" placeholder="Message text">
-    <input id="submit_button" class="submit" type="submit" onclick="sendWebhook()"  value="Submit">
+    <h1>Temporarely out of service</h1><br>
+    Check back tomorrow. Or shoot a message to <a href="mailto:contact@hithroc.org">contact@hithroc.org</a> to get the status update.
   </body>
 </html>
